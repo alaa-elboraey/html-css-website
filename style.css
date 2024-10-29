@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+    --cream-color:hsl(30, 38%, 92%);
+    --dark-cyan:hsl(158, 36%, 37%);
+    --dark-blue: hsl(212, 21%, 14%);
+    --dark-gray:hsl(228, 12%, 48%);
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    background: var(--cream-color);
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+#product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    margin: 1rem;
+}
+
+img,
+picture{
+    display: block;
+    max-width: 100%;
+}
+  
+#product img{
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.product-content{
+    background: #fff;
+    padding: 2rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.product-content .category{
+    font-size: 12px;
+    color: var(--dark-gray);
+letter-spacing: 4px;
+}
+
+.product-content h1{
+  margin: 12px 0; 
+  font-family: "Fraunces", serif;
+}
+
+.product-content p {
+    color: var(--dark-gray);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.product-content .price{
+    display: flex;
+align-items: center;
+}
+
+
+.product-content .price .discount-price{
+    color: var(--dark-cyan);
+    font-size: 26px;
+    font-weight: 900;
+    margin-right: 15px;
+    font-family: "Fraunces", serif;
+}
+
+.product-content .price .original-price{
+    font-size: 13px;
+}
+
+.product-content .cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 8px ;
+    border-radius: 7px;
+    color: #fff;
+    border: none;
+    background: var(--dark-cyan);
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.product-content .cart::before{
+    content: "";
+    background: url("images/icon-cart.svg");
+    width: 15px;
+    height: 16px;
+    margin-right: 10px;
+}
+
+@media (max-width:700px){
+    #product {
+        grid-template-columns: 1fr;
+    }
+
+    #product img{
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+    }
+
+    .product-content{
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+    }
+}
